@@ -1,8 +1,8 @@
 diff --git a/libavfilter/Makefile b/libavfilter/Makefile
-index 9ab65eb..1e8cc5a 100644
+index a99362b3ee..38aea815e1 100644
 --- a/libavfilter/Makefile
 +++ b/libavfilter/Makefile
-@@ -310,6 +310,7 @@ OBJS-$(CONFIG_YADIF_FILTER)                  += vf_yadif.o
+@@ -431,6 +431,7 @@ OBJS-$(CONFIG_YADIF_CUDA_FILTER)             += vf_yadif_cuda.o vf_yadif_cuda.pt
  OBJS-$(CONFIG_ZMQ_FILTER)                    += f_zmq.o
  OBJS-$(CONFIG_ZOOMPAN_FILTER)                += vf_zoompan.o
  OBJS-$(CONFIG_ZSCALE_FILTER)                 += vf_zscale.o
@@ -11,14 +11,14 @@ index 9ab65eb..1e8cc5a 100644
  OBJS-$(CONFIG_ALLRGB_FILTER)                 += vsrc_testsrc.o
  OBJS-$(CONFIG_ALLYUV_FILTER)                 += vsrc_testsrc.o
 diff --git a/libavfilter/allfilters.c b/libavfilter/allfilters.c
-index 2c37818..fc21ad2 100644
+index 858ed1cf78..fbb0a166ed 100644
 --- a/libavfilter/allfilters.c
 +++ b/libavfilter/allfilters.c
-@@ -325,6 +325,7 @@ void avfilter_register_all(void)
-     REGISTER_FILTER(ZMQ,            zmq,            vf);
-     REGISTER_FILTER(ZOOMPAN,        zoompan,        vf);
-     REGISTER_FILTER(ZSCALE,         zscale,         vf);
-+    REGISTER_FILTER(GENERICSHADER,  genericshader,  vf);
+@@ -465,6 +465,7 @@ extern  AVFilter ff_asink_abuffer;
+ extern  AVFilter ff_vsink_buffer;
+ extern AVFilter ff_af_afifo;
+ extern AVFilter ff_vf_fifo;
++extern AVFilter ff_vf_genericshader;
  
-     REGISTER_FILTER(ALLRGB,         allrgb,         vsrc);
-     REGISTER_FILTER(ALLYUV,         allyuv,         vsrc);
+ #include "libavfilter/filter_list.c"
+ 
